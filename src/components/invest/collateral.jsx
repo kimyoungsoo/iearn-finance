@@ -1,5 +1,5 @@
-//i18n => {"collateral.Text.1":"Invested","collateral.Text.2":"Current Balance","collateral.Text.3":"I want to earn interest on","collateral.Text.4":"Asset","collateral.Text.5":"APR","collateral.Text.6":"Balance","collateral.Text.7":"Invest"}
-import {i18n as i18next} from "i18next";
+//i18n => {"collateral.Text.1":"Invested","collateral.Text.2":"Current Balance","collateral.Text.3":"I want to earn interest on","collateral.Text.4":"Asset","collateral.Text.5":"APR","collateral.Text.6":"Balance","collateral.Text.7":"{ asset.name }","collateral.Text.8":"Invest","collateral.Text.9":"{ asset.name }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -210,7 +210,7 @@ class Collateral extends Component {
   					return (
   						<div key={asset.symbol} className={ classes.tableRowExpanded } >
   							<div className={ `${classes.tableCell} ${classes.tableCell1}` } onClick={ (e) => { this.clickRow(e, asset); } }>
-  								<Typography variant='body1' noWrap>{ asset.name }</Typography>
+  								<Typography variant='body1' noWrap id="collateral.Text.7" >{i18next.t('collateral.Text.7')}</Typography>
   							</div>
   							<div className={ classes.tableCell } onClick={ (e) => { this.clickRow(e, asset); } }>
   								<Typography variant='body1' align='right' noWrap>{ asset.apr }%</Typography>
@@ -241,7 +241,7 @@ class Collateral extends Component {
   									disabled={ loading }
   									onClick={ this.onInvest }
   								>
-  									<Typography className={ classes.buttonText } variant={ 'h3'} id="collateral.Text.7" >{i18next.t('collateral.Text.7')}</Typography>
+  									<Typography className={ classes.buttonText } variant={ 'h3'} id="collateral.Text.8" >{i18next.t('collateral.Text.8')}</Typography>
   								</Button>
   							</div>
   						</div>
@@ -251,7 +251,7 @@ class Collateral extends Component {
   				return (
   					<div key={asset.symbol} className={ classes.tableRow } onClick={ (e) => { this.clickRow(e, asset); } }>
   						<div className={ `${classes.tableCell} ${classes.tableCell1}` }>
-  							<Typography variant='body1' noWrap>{ asset.name }</Typography>
+  							<Typography variant='body1' noWrap id="collateral.Text.9" >{i18next.t('collateral.Text.9')}</Typography>
   						</div>
   						<div className={ classes.tableCell }>
   							<Typography variant='body1' align='right' noWrap>{ asset.apr }%</Typography>

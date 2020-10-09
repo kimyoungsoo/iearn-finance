@@ -1,5 +1,5 @@
-//i18n => {"want.Text.1":"I will receive"}
-import {i18n as i18next} from "i18next";
+//i18n => {"want.Text.1":"I will receive","want.Text.2":"{ option }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -154,7 +154,7 @@ class Want extends Component {
   					/>
   				</div>
   				<div className={ classes.assetSelectIconName }>
-  					<Typography variant='h2'>{ option }</Typography>
+  					<Typography variant='h2' id="want.Text.2" >{i18next.t('want.Text.2')}</Typography>
   				</div>
   			</React.Fragment>
   		</MenuItem>

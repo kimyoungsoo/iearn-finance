@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"have.Text.1":"{ t(\"Zap.IHave\") }","have.Text.2":"{ option.symbol }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -118,7 +118,7 @@ class Have extends Component {
 		return (
 			<div className={ classes.root }>
 				<div className={ classes.inputCard }>
-					<Typography variant='h3' className={ classes.inputCardHeading }>{ t("Zap.IHave") }</Typography>
+					<Typography variant='h3' className={ classes.inputCardHeading } id="have.Text.1" >{i18next.t('have.Text.1')}</Typography>
 					<div className={ classes.tradeContainer }>
 						{ sendAsset && <div className={ classes.balances }>
 							<Typography variant='h3' className={ classes.title }></Typography><Typography variant='h4' onClick={ () => { this.props.setSendAmountPercent(100); } } className={ classes.value } noWrap>{ 'Balance: '+ ( sendAsset.balance ? sendAsset.balance.toFixed(4) : '0.0000') } { sendAsset.tokenSymbol ? sendAsset.tokenSymbol : sendAsset.symbol }</Typography>
@@ -201,7 +201,7 @@ class Have extends Component {
   					/>
   				</div>
   				<div className={ classes.assetSelectIconName }>
-  					<Typography variant='h4'>{ option.symbol }</Typography>
+  					<Typography variant='h4' id="have.Text.2" >{i18next.t('have.Text.2')}</Typography>
   				</div>
   			</React.Fragment>
   		</MenuItem>

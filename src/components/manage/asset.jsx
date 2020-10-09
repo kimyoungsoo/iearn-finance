@@ -1,5 +1,5 @@
-//i18n => {"asset.Text.1":"Recommend","asset.Text.2":"Donate","asset.Text.3":"Rebalance"}
-import {i18n as i18next} from "i18next";
+//i18n => {"asset.Text.1":"Recommend","asset.Text.2":"Donate","asset.Text.3":"{ parseFloat(asset.tokenBalance).toFixed(2) }","asset.Text.4":"{ this.lender(asset.current) }","asset.Text.5":"{ this.lender(asset.recommended) }","asset.Text.6":"Rebalance"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -272,11 +272,11 @@ class Asset extends Component {
   		<div className={classes.tradeContainer}>
   			<div className={ classes.textContainer }>
   				<Typography className={ classes.text } variant={ 'h5' }>{ 'Token: ' }</Typography>
-  				<Typography className={ classes.text } variant={ 'h3' }>{ parseFloat(asset.tokenBalance).toFixed(2) }</Typography>
+  				<Typography className={ classes.text } variant={ 'h3' } id="asset.Text.3" >{i18next.t('asset.Text.3')}</Typography>
   				<Typography className={ classes.text } variant={ 'h5' }>{ 'Current: ' }</Typography>
-  				<Typography className={ classes.text } variant={ 'h3' }>{ this.lender(asset.current) }</Typography>
+  				<Typography className={ classes.text } variant={ 'h3' } id="asset.Text.4" >{i18next.t('asset.Text.4')}</Typography>
   				<Typography className={ classes.text } variant={ 'h5' }>{ 'Recommend: ' }</Typography>
-  				<Typography className={ classes.text } variant={ 'h3' }>{ this.lender(asset.recommended) }</Typography>
+  				<Typography className={ classes.text } variant={ 'h3' } id="asset.Text.5" >{i18next.t('asset.Text.5')}</Typography>
   			</div>
   			<div className={ classes.scaleContainer }>
   				<Button
@@ -286,7 +286,7 @@ class Asset extends Component {
   					disabled={ loading || !account.address }
   					onClick={ this.onRedeem }
   				>
-  					<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.3" >{i18next.t('asset.Text.3')}</Typography>
+  					<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.6" >{i18next.t('asset.Text.6')}</Typography>
   				</Button>
   			</div>
   		</div>

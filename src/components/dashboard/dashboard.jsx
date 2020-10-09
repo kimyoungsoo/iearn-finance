@@ -1,5 +1,5 @@
-//i18n => {"dashboard.Text.1":"This project is in beta. Use at your own risk.","dashboard.Text.2":"Connect your wallet to continue","dashboard.Text.3":"ETH","dashboard.Text.4":"Portfolio Balance","dashboard.Text.5":"ETH","dashboard.Text.6":"ETH","dashboard.Text.7":"ETH","dashboard.Text.8":"Vaults Overview","dashboard.Text.9":"Earn Overview","dashboard.Text.10":"Daily Growth","dashboard.Text.11":"ETH","dashboard.Text.12":"Weekly Growth","dashboard.Text.13":"ETH","dashboard.Text.14":"Yearly Growth","dashboard.Text.15":"ETH","dashboard.Text.16":"Net worth","dashboard.Text.17":"ETH","dashboard.Text.18":"Daily Growth","dashboard.Text.19":"ETH","dashboard.Text.20":"Weekly Growth","dashboard.Text.21":"ETH","dashboard.Text.22":"Yearly Growth","dashboard.Text.23":"ETH","dashboard.Text.24":"Net worth","dashboard.Text.25":"ETH"}
-import {i18n as i18next} from "i18next";
+//i18n => {"dashboard.Text.1":"This project is in beta. Use at your own risk.","dashboard.Text.2":"Connect your wallet to continue","dashboard.Text.3":"ETH","dashboard.Text.4":"Portfolio Balance","dashboard.Text.5":"ETH","dashboard.Text.6":"\n                  Daily Growth\n              \t","dashboard.Text.7":"ETH","dashboard.Text.8":"\n                  Weekly Growth\n              \t","dashboard.Text.9":"ETH","dashboard.Text.10":"\n                  Yearly Growth\n              \t","dashboard.Text.11":"Vaults Overview","dashboard.Text.12":"Earn Overview","dashboard.Text.13":"{ option.description }","dashboard.Text.14":"{ asset.name }","dashboard.Text.15":"{ asset.description }","dashboard.Text.16":"Daily Growth","dashboard.Text.17":"ETH","dashboard.Text.18":"Weekly Growth","dashboard.Text.19":"ETH","dashboard.Text.20":"Yearly Growth","dashboard.Text.21":"ETH","dashboard.Text.22":"Net worth","dashboard.Text.23":"ETH","dashboard.Text.24":"{ asset.name }","dashboard.Text.25":"{ asset.description }","dashboard.Text.26":"Daily Growth","dashboard.Text.27":"ETH","dashboard.Text.28":"Weekly Growth","dashboard.Text.29":"ETH","dashboard.Text.30":"Yearly Growth","dashboard.Text.31":"ETH","dashboard.Text.32":"Net worth","dashboard.Text.33":"ETH"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -300,9 +300,7 @@ class Dashboard extends Component {
                   	<Typography className={ classes.symbol } variant={ 'h3' } id="dashboard.Text.5" >{i18next.t('dashboard.Text.5')}</Typography>
                   </div>
               	}
-              	<Typography variant={ 'h4' } className={ `${classes.gray} ${classes.prettyAlign}` }>
-                  Daily Growth
-              	</Typography>
+              	<Typography variant={ 'h4' } className={ `${classes.gray} ${classes.prettyAlign}` } id="dashboard.Text.6" >{i18next.t('dashboard.Text.6')}</Typography>
               </div>
   					}
 
@@ -312,12 +310,10 @@ class Dashboard extends Component {
               	{ currency === 'ETH' &&
                   <div className={ classes.inline }>
                   	<Typography variant={ 'h2' } noWrap>{ parseFloat(dashboard.portfolio_growth_eth_weekly.toFixed(2)).toLocaleString() }</Typography >
-                  	<Typography className={ classes.symbol } variant={ 'h3' } id="dashboard.Text.6" >{i18next.t('dashboard.Text.6')}</Typography>
+                  	<Typography className={ classes.symbol } variant={ 'h3' } id="dashboard.Text.7" >{i18next.t('dashboard.Text.7')}</Typography>
                   </div>
               	}
-              	<Typography variant={ 'h4' } className={ `${classes.gray} ${classes.prettyAlign}` }>
-                  Weekly Growth
-              	</Typography>
+              	<Typography variant={ 'h4' } className={ `${classes.gray} ${classes.prettyAlign}` } id="dashboard.Text.8" >{i18next.t('dashboard.Text.8')}</Typography>
               </div>
   					}
 
@@ -327,25 +323,23 @@ class Dashboard extends Component {
               	{ currency === 'ETH' &&
                   <div className={ classes.inline }>
                   	<Typography variant={ 'h2' } noWrap>{ parseFloat(dashboard.portfolio_growth_eth_yearly.toFixed(2)).toLocaleString() }</Typography >
-                  	<Typography className={ classes.symbol } variant={ 'h3' } id="dashboard.Text.7" >{i18next.t('dashboard.Text.7')}</Typography>
+                  	<Typography className={ classes.symbol } variant={ 'h3' } id="dashboard.Text.9" >{i18next.t('dashboard.Text.9')}</Typography>
                   </div>
               	}
-              	<Typography variant={ 'h4' } className={ `${classes.gray} ${classes.prettyAlign}` }>
-                  Yearly Growth
-              	</Typography>
+              	<Typography variant={ 'h4' } className={ `${classes.gray} ${classes.prettyAlign}` } id="dashboard.Text.10" >{i18next.t('dashboard.Text.10')}</Typography>
               </div>
   					}
   				</div>
   				{ this.renderBasedOn() }
   				{ (dashboard.vaults && dashboard.vaults.length > 0) &&
             <div className={ classes.vaultContainer }>
-            	<Typography variant={ 'h3' } className={ classes.sectionHeading } id="dashboard.Text.8" >{i18next.t('dashboard.Text.8')}</Typography>
+            	<Typography variant={ 'h3' } className={ classes.sectionHeading } id="dashboard.Text.11" >{i18next.t('dashboard.Text.11')}</Typography>
             	{ this.renderVaults() }
             </div>
   				}
   				{ (dashboard.assets && dashboard.assets.length > 0) &&
             <div className={ classes.earnContainer }>
-            	<Typography variant={ 'h3' } className={ classes.sectionHeading } id="dashboard.Text.9" >{i18next.t('dashboard.Text.9')}</Typography>
+            	<Typography variant={ 'h3' } className={ classes.sectionHeading } id="dashboard.Text.12" >{i18next.t('dashboard.Text.12')}</Typography>
             	{ this.renderEarn() }
             </div>
   				}
@@ -395,7 +389,7 @@ class Dashboard extends Component {
           options.map((option) => {
           	return (
           		<MenuItem key={ option.value } value={ option.value }>
-          			<Typography variant='h4'>{ option.description }</Typography>
+          			<Typography variant='h4' id="dashboard.Text.13" >{i18next.t('dashboard.Text.13')}</Typography>
           		</MenuItem>
           	);
           })
@@ -464,13 +458,13 @@ class Dashboard extends Component {
   						/>
   					</div>
   					<div>
-  						<Typography variant={ 'h3' } noWrap>{ asset.name }</Typography>
-  						<Typography variant={ 'h5' } noWrap className={ classes.gray }>{ asset.description }</Typography>
+  						<Typography variant={ 'h3' } noWrap id="dashboard.Text.14" >{i18next.t('dashboard.Text.14')}</Typography>
+  						<Typography variant={ 'h5' } noWrap className={ classes.gray } id="dashboard.Text.15" >{i18next.t('dashboard.Text.15')}</Typography>
   					</div>
   				</div>
   				{ growth === 0 &&
             <div className={classes.heading}>
-            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.10" >{i18next.t('dashboard.Text.10')}</Typography>
+            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.16" >{i18next.t('dashboard.Text.16')}</Typography>
             	{ currency === 'USD' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.vaultGrowth_daily_usd.toFixed(2)).toLocaleString() }</Typography >
@@ -481,7 +475,7 @@ class Dashboard extends Component {
             	{ currency === 'ETH' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.vaultGrowth_daily_eth.toFixed(2)).toLocaleString() }</Typography >
-                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.11" >{i18next.t('dashboard.Text.11')}</Typography>
+                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.17" >{i18next.t('dashboard.Text.17')}</Typography>
                 	<Typography className={ classes.symbolAt } variant={ 'h4' }> @ </Typography>
                 	<Typography className={ classes.symbol } variant={ 'h4' }> { (this._getAPY(asset)/365).toFixed(2) }%</Typography>
                 </div>
@@ -490,7 +484,7 @@ class Dashboard extends Component {
   				}
   				{ growth === 1 &&
             <div className={classes.heading}>
-            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.12" >{i18next.t('dashboard.Text.12')}</Typography>
+            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.18" >{i18next.t('dashboard.Text.18')}</Typography>
             	{ currency === 'USD' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.vaultGrowth_weekly_usd.toFixed(2)).toLocaleString() }</Typography >
@@ -501,7 +495,7 @@ class Dashboard extends Component {
             	{ currency === 'ETH' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.vaultGrowth_weekly_eth.toFixed(2)).toLocaleString() }</Typography >
-                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.13" >{i18next.t('dashboard.Text.13')}</Typography>
+                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.19" >{i18next.t('dashboard.Text.19')}</Typography>
                 	<Typography className={ classes.symbolAt } variant={ 'h4' }> @ </Typography>
                 	<Typography className={ classes.symbol } variant={ 'h4' }> { (this._getAPY(asset)/52).toFixed(2) }%</Typography>
                 </div>
@@ -510,7 +504,7 @@ class Dashboard extends Component {
   				}
   				{ growth === 2 &&
             <div className={classes.heading}>
-            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.14" >{i18next.t('dashboard.Text.14')}</Typography>
+            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.20" >{i18next.t('dashboard.Text.20')}</Typography>
             	{ currency === 'USD' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.vaultGrowth_yearly_usd.toFixed(2)).toLocaleString() }</Typography >
@@ -521,7 +515,7 @@ class Dashboard extends Component {
             	{ currency === 'ETH' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.vaultGrowth_yearly_eth.toFixed(2)).toLocaleString() }</Typography >
-                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.15" >{i18next.t('dashboard.Text.15')}</Typography>
+                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.21" >{i18next.t('dashboard.Text.21')}</Typography>
                 	<Typography className={ classes.symbolAt } variant={ 'h4' }> @ </Typography>
                 	<Typography className={ classes.symbol } variant={ 'h4' }> { (this._getAPY(asset)/1).toFixed(2) }%</Typography>
                 </div>
@@ -529,12 +523,12 @@ class Dashboard extends Component {
             </div>
   				}
   				<div className={classes.heading}>
-  					<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.16" >{i18next.t('dashboard.Text.16')}</Typography>
+  					<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.22" >{i18next.t('dashboard.Text.22')}</Typography>
   					{ currency === 'USD' && <Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.usdBalance ? (asset.usdBalance).toFixed(2) : '0.00').toLocaleString() }</Typography > }
   					{ currency === 'ETH' &&
               <div className={ classes.inline }>
               	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.ethBalance ? (asset.ethBalance).toFixed(2) : '0.00').toLocaleString() }</Typography >
-              	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.17" >{i18next.t('dashboard.Text.17')}</Typography>
+              	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.23" >{i18next.t('dashboard.Text.23')}</Typography>
               </div>
   					}
   				</div>
@@ -564,13 +558,13 @@ class Dashboard extends Component {
   						/>
   					</div>
   					<div>
-  						<Typography variant={ 'h3' } noWrap>{ asset.name }</Typography>
-  						<Typography variant={ 'h5' } noWrap className={ classes.gray }>{ asset.description }</Typography>
+  						<Typography variant={ 'h3' } noWrap id="dashboard.Text.24" >{i18next.t('dashboard.Text.24')}</Typography>
+  						<Typography variant={ 'h5' } noWrap className={ classes.gray } id="dashboard.Text.25" >{i18next.t('dashboard.Text.25')}</Typography>
   					</div>
   				</div>
   				{ growth === 0 &&
             <div className={classes.heading}>
-            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.18" >{i18next.t('dashboard.Text.18')}</Typography>
+            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.26" >{i18next.t('dashboard.Text.26')}</Typography>
             	{ currency === 'USD' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.earnGrowth_daily_usd.toFixed(2)).toLocaleString() }</Typography >
@@ -581,7 +575,7 @@ class Dashboard extends Component {
             	{ currency === 'ETH' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.earnGrowth_daily_eth.toFixed(2)).toLocaleString() }</Typography >
-                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.19" >{i18next.t('dashboard.Text.19')}</Typography>
+                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.27" >{i18next.t('dashboard.Text.27')}</Typography>
                 	<Typography className={ classes.symbolAt } variant={ 'h4' }> @ </Typography>
                 	<Typography className={ classes.symbol } variant={ 'h4' }> { (asset.maxApr ? (asset.maxApr*100/365).toFixed(2) : '0.00') }%</Typography>
                 </div>
@@ -590,7 +584,7 @@ class Dashboard extends Component {
   				}
   				{ growth === 1 &&
             <div className={classes.heading}>
-            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.20" >{i18next.t('dashboard.Text.20')}</Typography>
+            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.28" >{i18next.t('dashboard.Text.28')}</Typography>
             	{ currency === 'USD' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.earnGrowth_weekly_usd.toFixed(2)).toLocaleString() }</Typography >
@@ -601,7 +595,7 @@ class Dashboard extends Component {
             	{ currency === 'ETH' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.earnGrowth_weekly_eth.toFixed(2)).toLocaleString() }</Typography >
-                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.21" >{i18next.t('dashboard.Text.21')}</Typography>
+                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.29" >{i18next.t('dashboard.Text.29')}</Typography>
                 	<Typography className={ classes.symbolAt } variant={ 'h4' }> @ </Typography>
                 	<Typography className={ classes.symbol } variant={ 'h4' }> { (asset.maxApr ? (asset.maxApr*100/52).toFixed(2) : '0.00') }%</Typography>
                 </div>
@@ -610,7 +604,7 @@ class Dashboard extends Component {
   				}
   				{ growth === 2 &&
             <div className={classes.heading}>
-            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.22" >{i18next.t('dashboard.Text.22')}</Typography>
+            	<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.30" >{i18next.t('dashboard.Text.30')}</Typography>
             	{ currency === 'USD' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.earnGrowth_yearly_usd.toFixed(2)).toLocaleString() }</Typography >
@@ -621,7 +615,7 @@ class Dashboard extends Component {
             	{ currency === 'ETH' &&
                 <div className={ classes.inline }>
                 	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.earnGrowth_yearly_eth.toFixed(2)).toLocaleString() }</Typography >
-                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.23" >{i18next.t('dashboard.Text.23')}</Typography>
+                	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.31" >{i18next.t('dashboard.Text.31')}</Typography>
                 	<Typography className={ classes.symbolAt } variant={ 'h4' }> @ </Typography>
                 	<Typography className={ classes.symbol } variant={ 'h4' }> { (asset.maxApr ? (asset.maxApr*100).toFixed(2) : '0.00') }%</Typography>
                 </div>
@@ -629,12 +623,12 @@ class Dashboard extends Component {
             </div>
   				}
   				<div className={classes.heading}>
-  					<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.24" >{i18next.t('dashboard.Text.24')}</Typography>
+  					<Typography variant={ 'h5' } className={ classes.gray } id="dashboard.Text.32" >{i18next.t('dashboard.Text.32')}</Typography>
   					{ currency === 'USD' && <Typography variant={ 'h3' } noWrap>$ { parseFloat(asset.usdBalance ? (asset.usdBalance).toFixed(2) : '0.00').toLocaleString() }</Typography > }
   					{ currency === 'ETH' &&
               <div className={ classes.inline }>
               	<Typography variant={ 'h3' } noWrap>{ parseFloat(asset.ethBalance ? (asset.ethBalance).toFixed(2) : '0.00').toLocaleString() }</Typography >
-              	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.25" >{i18next.t('dashboard.Text.25')}</Typography>
+              	<Typography className={ classes.symbol } variant={ 'h4' } id="dashboard.Text.33" >{i18next.t('dashboard.Text.33')}</Typography>
               </div>
   					}
   				</div>

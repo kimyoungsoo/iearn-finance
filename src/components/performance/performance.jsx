@@ -1,5 +1,5 @@
-//i18n => {"performance.Text.1":"ROI","performance.Text.2":"Block","performance.Text.3":"ETH","performance.Text.4":"iETH","performance.Text.5":"ETH Redeem"}
-import {i18n as i18next} from "i18next";
+//i18n => {"performance.Text.1":"ROI","performance.Text.2":"Block","performance.Text.3":"ETH","performance.Text.4":"iETH","performance.Text.5":"ETH Redeem","performance.Text.6":"{ e.blockNumber }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -195,7 +195,7 @@ class Performance extends Component {
   		return (
   			<div key={ e.blockNumber+'_y' } className={ classes.pair }>
   				<div className={ classes.apr }>
-  					<Typography variant={'h3'} align='left' color='secondary'>{ e.blockNumber }</Typography>
+  					<Typography variant={'h3'} align='left' color='secondary' id="performance.Text.6" >{i18next.t('performance.Text.6')}</Typography>
   				</div>
   				<div className={ classes.apr }>
   					<Typography align='right' color='secondary'>{ parseFloat(e.eth).toFixed(4) + '' }</Typography>

@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"home.Text.1":"Dashboard","home.Text.2":"{ \"Get a quick glance at how your portfolio is growing while invested in yearn's products.\" }","home.Text.3":"{ t(\"Home.Vaults\") }","home.Text.4":"{ \"Vaults follow unique strategies that are designed to maximize the yield of the deposited asset and minimize risk.\" }","home.Text.5":"{ t(\"Home.Earn\") }","home.Text.6":"{ t(\"Home.Zap\") }","home.Text.7":"{ \"Zaps help you save on gas fees. Zap directly into or out of Curve pools from the base assets.\" }","home.Text.8":"{ t(\"Home.Cover\") }","home.Text.9":"{ \"Get cover with Nexus Mutual from yinsure.finance\" }","home.Text.10":"Stats","home.Text.11":"{ \"Get a quick glance at how yearn's vaults are performing.\" }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -217,33 +217,33 @@ class Home extends Component {
 			<div className={ classes.root }>
 				<Card className={ `${classes.card} ${classes.apr}` } onClick={ () => { this.nav(location.pathname+'dashboard'); } }>
 					<BarChartIcon className={ `${classes.icon} icon` } />
-					<Typography variant={'h3'} className={ `${classes.title} title` }>Dashboard</Typography>
-					<Typography variant={'h4'} className={ `${classes.description} description` }>{ "Get a quick glance at how your portfolio is growing while invested in yearn's products." }</Typography>
+					<Typography variant={'h3'} className={ `${classes.title} title` } id="home.Text.1" >{i18next.t('home.Text.1')}</Typography>
+					<Typography variant={'h4'} className={ `${classes.description} description` } id="home.Text.2" >{i18next.t('home.Text.2')}</Typography>
 				</Card>
 				<Card className={ `${classes.card} ${classes.vault}` } onClick={ () => { this.nav(location.pathname+'vaults'); }}>
 					<PieChartIcon className={ `${classes.icon} icon` } />
-					<Typography variant={'h3'} className={ `${classes.title} title` }>{ t("Home.Vaults") }</Typography>
-					<Typography variant={'h4'} className={ `${classes.description} description` }>{ "Vaults follow unique strategies that are designed to maximize the yield of the deposited asset and minimize risk." }</Typography>
+					<Typography variant={'h3'} className={ `${classes.title} title` } id="home.Text.3" >{i18next.t('home.Text.3')}</Typography>
+					<Typography variant={'h4'} className={ `${classes.description} description` } id="home.Text.4" >{i18next.t('home.Text.4')}</Typography>
 				</Card>
 				<Card className={ `${classes.card} ${classes.earn}` } onClick={ () => { this.nav(location.pathname+'earn'); } }>
 					<AttachMoneyIcon className={ `${classes.icon} icon` } />
-					<Typography variant={'h3'} className={ `${classes.title} title` }>{ t("Home.Earn") }</Typography>
+					<Typography variant={'h3'} className={ `${classes.title} title` } id="home.Text.5" >{i18next.t('home.Text.5')}</Typography>
 					<Typography variant={'h4'} className={ `${classes.description} description` }>{ "Earn performs profit switching for lending providers, moving your funds between dydx, Aave, Compound autonomously." }</Typography>
 				</Card>
 				<Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'zap'); } }>
 					<FlashOnIcon className={ `${classes.icon} icon` } />
-					<Typography variant={'h3'} className={ `${classes.title} title` }>{ t("Home.Zap") }</Typography>
-					<Typography variant={'h4'} className={ `${classes.description} description` }>{ "Zaps help you save on gas fees. Zap directly into or out of Curve pools from the base assets." }</Typography>
+					<Typography variant={'h3'} className={ `${classes.title} title` } id="home.Text.6" >{i18next.t('home.Text.6')}</Typography>
+					<Typography variant={'h4'} className={ `${classes.description} description` } id="home.Text.7" >{i18next.t('home.Text.7')}</Typography>
 				</Card>
 				<Card className={ `${classes.card} ${classes.cover}` } onClick={ () => { window.open("https://yinsure.finance", "_blank"); } }>
 					<SecurityIcon className={ `${classes.icon} icon` } />
-					<Typography variant={'h3'} className={ `${classes.title} title` }>{ t("Home.Cover") }</Typography>
-					<Typography variant={'h4'} className={ `${classes.description} description` }>{ "Get cover with Nexus Mutual from yinsure.finance" }</Typography>
+					<Typography variant={'h3'} className={ `${classes.title} title` } id="home.Text.8" >{i18next.t('home.Text.8')}</Typography>
+					<Typography variant={'h4'} className={ `${classes.description} description` } id="home.Text.9" >{i18next.t('home.Text.9')}</Typography>
 				</Card>
 				<Card className={ `${classes.card} ${classes.apr}` } onClick={ () => { this.nav(location.pathname+'stats'); } }>
 					<BarChartIcon className={ `${classes.icon} icon` } />
-					<Typography variant={'h3'} className={ `${classes.title} title` }>Stats</Typography>
-					<Typography variant={'h4'} className={ `${classes.description} description` }>{ "Get a quick glance at how yearn's vaults are performing." }</Typography>
+					<Typography variant={'h3'} className={ `${classes.title} title` } id="home.Text.10" >{i18next.t('home.Text.10')}</Typography>
+					<Typography variant={'h4'} className={ `${classes.description} description` } id="home.Text.11" >{i18next.t('home.Text.11')}</Typography>
 				</Card>
 			</div>
 		);

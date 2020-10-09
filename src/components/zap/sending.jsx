@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"sending.Text.1":"{ t(\"Zap.SendAmount\") }","sending.Text.2":"{ inputAdornment }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -78,7 +78,7 @@ class Sending extends Component {
 		return (
 			<div className={ classes.root }>
 				<div className={ classes.inputCard }>
-					<Typography variant='h3' className={ classes.inputCardHeading }>{ t("Zap.SendAmount") }</Typography>
+					<Typography variant='h3' className={ classes.inputCardHeading } id="sending.Text.1" >{i18next.t('sending.Text.1')}</Typography>
 					{ this.renderAmountInput('amount', sendAmount, false, 'Amount', '0.00', (sendAsset ? sendAsset.symbol : '')) }
 					<div className={ classes.scaleContainer }>
 						<Button
@@ -142,7 +142,7 @@ class Sending extends Component {
   			placeholder={ placeholder }
   			variant="outlined"
   			InputProps={{
-  				endAdornment: <InputAdornment position="end" className={ classes.inputAdornment }><Typography variant='h3'>{ inputAdornment }</Typography></InputAdornment>,
+  				endAdornment: <InputAdornment position="end" className={ classes.inputAdornment }><Typography variant='h3' id="sending.Text.2" >{i18next.t('sending.Text.2')}</Typography></InputAdornment>,
   			}}
   		/>
   	);

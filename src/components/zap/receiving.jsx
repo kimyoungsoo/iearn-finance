@@ -1,5 +1,5 @@
-//i18n => {"receiving.Text.1":"Receive amount"}
-import {i18n as i18next} from "i18next";
+//i18n => {"receiving.Text.1":"Receive amount","receiving.Text.2":"{ inputAdornment }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -98,7 +98,7 @@ class Receiving extends Component {
   			variant="outlined"
   			disabled
   			InputProps={{
-  				endAdornment: <InputAdornment position="end" className={ classes.inputAdornment }><Typography variant='h3'>{ inputAdornment }</Typography></InputAdornment>,
+  				endAdornment: <InputAdornment position="end" className={ classes.inputAdornment }><Typography variant='h3' id="receiving.Text.2" >{i18next.t('receiving.Text.2')}</Typography></InputAdornment>,
   			}}
   		/>
   	);

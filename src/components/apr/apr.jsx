@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"apr.Text.1":"{ 'Vault' }","apr.Text.2":"{ 'Current Strategy' }","apr.Text.3":"{ 'Vault holdings' }","apr.Text.4":"{ 'Strategy holdings' }","apr.Text.5":"{ 'Token' }","apr.Text.6":"{ 'USD' }","apr.Text.7":"{ 'ROI based on sampled period' }","apr.Text.8":"{ '1 Week' }","apr.Text.9":"{ '1 Month' }","apr.Text.10":"{ 'Inception' }","apr.Text.11":"{ asset.name }","apr.Text.12":"{ asset.strategyName }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -223,39 +223,39 @@ class APR extends Component {
   	return (
   		<tr className={ classes.pair }>
   			<th className={ classes.headerName }>
-  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeader}>{ 'Vault' }</Typography>
+  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeader} id="apr.Text.1" >{i18next.t('apr.Text.1')}</Typography>
   			</th>
   			<th className={ classes.headerStrategy }>
-  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeader}>{ 'Current Strategy' }</Typography>
+  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeader} id="apr.Text.2" >{i18next.t('apr.Text.2')}</Typography>
   			</th>
   			<th className={ classes.headerValue }>
-  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ 'Vault holdings' }</Typography>
+  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.3" >{i18next.t('apr.Text.3')}</Typography>
   			</th>
   			<th className={ classes.headerValue }>
-  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ 'Strategy holdings' }</Typography>
+  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.4" >{i18next.t('apr.Text.4')}</Typography>
   			</th>
   			<th className={ classes.headerHoldings }>
   				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ 'Your holdings ( Token & USD)' }</Typography>
   				<div className={ classes.subHeader }>
   					<div className={ classes.headerValue }>
-  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ 'Token' }</Typography>
+  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.5" >{i18next.t('apr.Text.5')}</Typography>
   					</div>
   					<div className={ classes.headerValue }>
-  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ 'USD' }</Typography>
+  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.6" >{i18next.t('apr.Text.6')}</Typography>
   					</div>
   				</div>
   			</th>
   			<th className={ classes.headerROI }>
-  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderCenter}>{ 'ROI based on sampled period' }</Typography>
+  				<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderCenter} id="apr.Text.7" >{i18next.t('apr.Text.7')}</Typography>
   				<div className={ classes.subHeader }>
   					<div className={ classes.headerValue }>
-  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ '1 Week' }</Typography>
+  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.8" >{i18next.t('apr.Text.8')}</Typography>
   					</div>
   					<div className={ classes.headerValue }>
-  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ '1 Month' }</Typography>
+  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.9" >{i18next.t('apr.Text.9')}</Typography>
   					</div>
   					<div className={ classes.headerValue }>
-  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight}>{ 'Inception' }</Typography>
+  						<Typography  align='right' variant={'h4'} className={classes.aggregatedHeaderRight} id="apr.Text.10" >{i18next.t('apr.Text.10')}</Typography>
   					</div>
   				</div>
   			</th>
@@ -282,10 +282,10 @@ class APR extends Component {
   								height="30px"
   							/>
   						</div>
-  						<Typography align='right' variant={'h4'} >{ asset.name }</Typography>
+  						<Typography align='right' variant={'h4'}  id="apr.Text.11" >{i18next.t('apr.Text.11')}</Typography>
   					</td>
   					<td className={ classes.strategy } onClick={() => { window.open(`https://etherscan.io/address/${asset.strategy}#code`, "_blank");} }>
-  						<Typography align='right' variant='h5'>{ asset.strategyName }</Typography>
+  						<Typography align='right' variant='h5' id="apr.Text.12" >{i18next.t('apr.Text.12')}</Typography>
   					</td>
   					<td className={ classes.apr2 }>
   						<Typography align='right' variant='h5' className={ classes.inline }>{ asset.vaultHoldings ? parseFloat(asset.vaultHoldings.toFixed(2)).toLocaleString() : '0.00'  } <div className={classes.symbol}>{ asset.symbol }</div></Typography>

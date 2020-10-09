@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"compAsset.Text.1":"{ t('Asset.Withdraw') }","compAsset.Text.2":"{ t('Asset.ClaimRewards') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -305,7 +305,7 @@ class Asset extends Component {
   				onClick={ this.onWithdraw }
   				fullWidth
   			>
-  				<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('Asset.Withdraw') }</Typography>
+  				<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="compAsset.Text.1" >{i18next.t('compAsset.Text.1')}</Typography>
   			</Button>
   		</div>
   		<div className={ classes.sepperator }></div>
@@ -318,7 +318,7 @@ class Asset extends Component {
   				onClick={ this.onClaim }
   				fullWidth
   			>
-  				<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('Asset.ClaimRewards') }</Typography>
+  				<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="compAsset.Text.2" >{i18next.t('compAsset.Text.2')}</Typography>
   			</Button>
   		</div>
   	</div>);

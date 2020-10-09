@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"insuredAsset.Text.1":"{ t('Insure.TotalCost') }","insuredAsset.Text.2":"{ t('Insure.Expiration') }","insuredAsset.Text.3":"{ t('Insure.Premium') }","insuredAsset.Text.4":"{ t('Insure.ExpectedReturns') }","insuredAsset.Text.5":"{ t('Insure.TokensMinted') }","insuredAsset.Text.6":"{ t('Insure.CostPerToken') }","insuredAsset.Text.7":"{ t('Insure.CollateralizationRatio') }","insuredAsset.Text.8":"{ t('Insure.MinimumCollateralizationRatio') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -307,19 +307,19 @@ class Asset extends Component {
   		<div className={ `${classes.tradeContainer}` }>
   			<div className={ classes.tradeContainerInfo }>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h3'}>{ t('Insure.TotalCost') }</Typography>
+  					<Typography variant={'h3'} id="insuredAsset.Text.1" >{i18next.t('insuredAsset.Text.1')}</Typography>
   					<Typography variant={'h3'}>{ (amount*(pricePerInsurance !== null ? pricePerInsurance : asset.pricePerInsurance)).toFixed(4) + ' ETH' }</Typography>
   				</div>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h5'}>{ t('Insure.Expiration') }</Typography>
+  					<Typography variant={'h5'} id="insuredAsset.Text.2" >{i18next.t('insuredAsset.Text.2')}</Typography>
   					<Typography variant={'h4'}>{asset.expiryBlock ? moment(asset.expiryBlock, 'X').fromNow() : t('Insure.Unknown')}</Typography>
   				</div>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h5'}>{ t('Insure.Premium') }</Typography>
+  					<Typography variant={'h5'} id="insuredAsset.Text.3" >{i18next.t('insuredAsset.Text.3')}</Typography>
   					<Typography variant={'h4'} className={ expectedReturn > 10 ? classes.positive : (expectedReturn > 5 ? classes.warning : classes.error) }>{ '' + (yearlyPremium).toFixed(4) + '%' }</Typography>
   				</div>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h5'}>{ t('Insure.ExpectedReturns') }</Typography>
+  					<Typography variant={'h5'} id="insuredAsset.Text.4" >{i18next.t('insuredAsset.Text.4')}</Typography>
   					<Typography variant={'h4'} className={ expectedReturn > 10 ? classes.positive : (expectedReturn > 5 ? classes.warning : classes.error) }>{ '' + (expectedReturn).toFixed(4) + '%' }</Typography>
   				</div>
   			</div>
@@ -391,19 +391,19 @@ class Asset extends Component {
   		<div className={ `${classes.tradeContainer}` }>
   			<div className={ classes.tradeContainerInfo }>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h3'}>{ t('Insure.TokensMinted') }</Typography>
+  					<Typography variant={'h3'} id="insuredAsset.Text.5" >{i18next.t('insuredAsset.Text.5')}</Typography>
   					<Typography variant={'h3'}>{ maxTokens.toFixed(4) + ' '+asset.insuredSymbol }</Typography>
   				</div>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h5'}>{ t('Insure.CostPerToken') }</Typography>
+  					<Typography variant={'h5'} id="insuredAsset.Text.6" >{i18next.t('insuredAsset.Text.6')}</Typography>
   					<Typography variant={'h4'}>{ (asset.tokenPrice).toFixed(4) + ' ETH' }</Typography>
   				</div>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h5'}>{ t('Insure.CollateralizationRatio') }</Typography>
+  					<Typography variant={'h5'} id="insuredAsset.Text.7" >{i18next.t('insuredAsset.Text.7')}</Typography>
   					<Typography variant={'h4'}>{'200%'}</Typography>
   				</div>
   				<div className={ classes.infoContainer } >
-  					<Typography variant={'h5'}>{ t('Insure.MinimumCollateralizationRatio') }</Typography>
+  					<Typography variant={'h5'} id="insuredAsset.Text.8" >{i18next.t('insuredAsset.Text.8')}</Typography>
   					<Typography variant={'h4'}>{'160%'}</Typography>
   				</div>
   			</div>

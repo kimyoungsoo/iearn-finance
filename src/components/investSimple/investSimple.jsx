@@ -1,5 +1,5 @@
-//i18n => {"investSimple.Text.1":"This project is in beta. Use at your own risk.","investSimple.Text.2":"Connect your wallet to continue","investSimple.Text.3":"This project is in beta. Use at your own risk.","investSimple.Text.4":"v1","investSimple.Text.5":"y.curve.fi","investSimple.Text.6":"busd.curve.fi"}
-import {i18n as i18next} from "i18next";
+//i18n => {"investSimple.Text.1":"This project is in beta. Use at your own risk.","investSimple.Text.2":"Connect your wallet to continue","investSimple.Text.3":"This project is in beta. Use at your own risk.","investSimple.Text.4":"v1","investSimple.Text.5":"y.curve.fi","investSimple.Text.6":"busd.curve.fi","investSimple.Text.7":"{ asset.name }","investSimple.Text.8":"{ asset.description }","investSimple.Text.9":"{ t('InvestSimple.InterestRate') }","investSimple.Text.10":"{ t('InvestSimple.AvailableBalance') }","investSimple.Text.11":"{ asset.name }","investSimple.Text.12":"{ asset.description }","investSimple.Text.13":"{ t('InvestSimple.InterestRate') }","investSimple.Text.14":"{ t('InvestSimple.AvailableBalance') }","investSimple.Text.15":"{ asset.name }","investSimple.Text.16":"{ asset.description }","investSimple.Text.17":"{ t('InvestSimple.InterestRate') }","investSimple.Text.18":"{ t('InvestSimple.AvailableBalance') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -446,8 +446,8 @@ class InvestSimple extends Component {
   								/>
   							</div>
   							<div>
-  								<Typography variant={ 'h3' }>{ asset.name }</Typography>
-  								<Typography variant={ 'h5' } className={ classes.grey }>{ asset.description }</Typography>
+  								<Typography variant={ 'h3' } id="investSimple.Text.7" >{i18next.t('investSimple.Text.7')}</Typography>
+  								<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.8" >{i18next.t('investSimple.Text.8')}</Typography>
   							</div>
   						</div>
   						<div className={classes.heading}>
@@ -458,7 +458,7 @@ class InvestSimple extends Component {
   										: '0.0000 %'
   								}
   							</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('InvestSimple.InterestRate') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.9" >{i18next.t('investSimple.Text.9')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography variant={ 'h3' }>
@@ -468,7 +468,7 @@ class InvestSimple extends Component {
   										: '0.0000 ' + (asset.tokenSymbol ? asset.tokenSymbol : asset.symbol)
   								}
   							</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('InvestSimple.AvailableBalance') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.10" >{i18next.t('investSimple.Text.10')}</Typography>
   						</div>
   					</div>
   				</AccordionSummary>
@@ -507,8 +507,8 @@ class InvestSimple extends Component {
   								/>
   							</div>
   							<div>
-  								<Typography variant={ 'h3' }>{ asset.name }</Typography>
-  								<Typography variant={ 'h5' } className={ classes.grey }>{ asset.description }</Typography>
+  								<Typography variant={ 'h3' } id="investSimple.Text.11" >{i18next.t('investSimple.Text.11')}</Typography>
+  								<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.12" >{i18next.t('investSimple.Text.12')}</Typography>
   							</div>
   						</div>
   						<div className={classes.heading}>
@@ -519,7 +519,7 @@ class InvestSimple extends Component {
   										: '0.0000 %'
   								}
   							</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('InvestSimple.InterestRate') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.13" >{i18next.t('investSimple.Text.13')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography variant={ 'h3' }>
@@ -529,7 +529,7 @@ class InvestSimple extends Component {
   										: '0.0000 ' + (asset.tokenSymbol ? asset.tokenSymbol : asset.symbol)
   								}
   							</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('InvestSimple.AvailableBalance') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.14" >{i18next.t('investSimple.Text.14')}</Typography>
   						</div>
   					</div>
   				</AccordionSummary>
@@ -569,8 +569,8 @@ class InvestSimple extends Component {
   								/>
   							</div>
   							<div>
-  								<Typography variant={ 'h3' }>{ asset.name }</Typography>
-  								<Typography variant={ 'h5' } className={ classes.grey }>{ asset.description }</Typography>
+  								<Typography variant={ 'h3' } id="investSimple.Text.15" >{i18next.t('investSimple.Text.15')}</Typography>
+  								<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.16" >{i18next.t('investSimple.Text.16')}</Typography>
   							</div>
   						</div>
   						<div className={classes.heading}>
@@ -581,7 +581,7 @@ class InvestSimple extends Component {
   										: '0.0000 %'
   								}
   							</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('InvestSimple.InterestRate') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.17" >{i18next.t('investSimple.Text.17')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography variant={ 'h3' }>
@@ -591,7 +591,7 @@ class InvestSimple extends Component {
   										: '0.0000 ' + (asset.tokenSymbol ? asset.tokenSymbol : asset.symbol)
   								}
   							</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('InvestSimple.AvailableBalance') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="investSimple.Text.18" >{i18next.t('investSimple.Text.18')}</Typography>
   						</div>
   					</div>
   				</AccordionSummary>

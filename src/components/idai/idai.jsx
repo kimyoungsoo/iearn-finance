@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"idai.Text.1":"{ t('IDai.Intro') }","idai.Text.2":"{ t('InvestSimple.Connect') }","idai.Text.3":"{ t('IDai.Intro') }","idai.Text.4":"{ t('IDai.Swap') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -236,7 +236,7 @@ class IDai extends Component {
   			{ !account.address &&
           <div className={ classes.investedContainer }>
           	<div className={ classes.introCenter }>
-          		<Typography variant='h3'>{ t('IDai.Intro') }</Typography>
+          		<Typography variant='h3' id="idai.Text.1" >{i18next.t('idai.Text.1')}</Typography>
           	</div>
           	<div className={ classes.connectContainer }>
           		<Button
@@ -246,7 +246,7 @@ class IDai extends Component {
           			disabled={ loading }
           			onClick={ this.overlayClicked }
           		>
-          			<Typography className={ classes.buttonText } variant={ 'h5'}>{ t('InvestSimple.Connect') }</Typography>
+          			<Typography className={ classes.buttonText } variant={ 'h5'} id="idai.Text.2" >{i18next.t('idai.Text.2')}</Typography>
           		</Button>
           	</div>
           </div>
@@ -254,7 +254,7 @@ class IDai extends Component {
   			{ account.address &&
           <div className={ classes.card }>
           	<div className={ classes.introCenter }>
-          		<Typography variant='h3'>{ t('IDai.Intro') }</Typography>
+          		<Typography variant='h3' id="idai.Text.3" >{i18next.t('idai.Text.3')}</Typography>
           	</div>
           	<Card className={ classes.iHaveContainer }>
           		<Have assets={ assets } curveContracts={ curveContracts } setSendAsset={ this.setSendAsset } sendAsset={ sendAsset } setSendAmountPercent={ this.setSendAmountPercent } loading={ loading } />
@@ -270,7 +270,7 @@ class IDai extends Component {
           			onClick={ this.onZap }
           			fullWidth
           		>
-          			<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('IDai.Swap') }</Typography>
+          			<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="idai.Text.4" >{i18next.t('idai.Text.4')}</Typography>
           		</Button> }
           	</Card>
           	<div className={ classes.introCenter }>

@@ -1,5 +1,5 @@
-//i18n => {"asset.Text.1":"Deposits are currently disabled for this vault","asset.Text.2":"Withdraw","asset.Text.3":"Withdraw All"}
-import {i18n as i18next} from "i18next";
+//i18n => {"asset.Text.1":"{ asset.strategyName }","asset.Text.2":"Deposits are currently disabled for this vault","asset.Text.3":"Withdraw","asset.Text.4":"Withdraw All"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -215,7 +215,7 @@ class Asset extends Component {
   				<div className={classes.headingStrategy}>
   					<div>
   						<Typography variant={ 'h5' } className={ classes.grey }>Currently Active:</Typography>
-  						<Typography variant={ 'h4' } noWrap>{ asset.strategyName }</Typography>
+  						<Typography variant={ 'h4' } noWrap id="asset.Text.1" >{i18next.t('asset.Text.1')}</Typography>
   					</div>
   				</div>
   				<div className={classes.headingEarning}>
@@ -350,7 +350,7 @@ class Asset extends Component {
   					</div>
   					{ asset.depositDisabled === true &&
               <div className={classes.disabledContainer}>
-              	<Typography variant='h4' id="asset.Text.1" >{i18next.t('asset.Text.1')}</Typography>
+              	<Typography variant='h4' id="asset.Text.2" >{i18next.t('asset.Text.2')}</Typography>
               </div>
   					}
   				</div>
@@ -415,7 +415,7 @@ class Asset extends Component {
                 	onClick={ this.onWithdraw }
                 	fullWidth
                 >
-                	<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.2" >{i18next.t('asset.Text.2')}</Typography>
+                	<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.3" >{i18next.t('asset.Text.3')}</Typography>
                 </Button>
   						}
   						{ asset.withdrawAll === true &&
@@ -427,7 +427,7 @@ class Asset extends Component {
                 	onClick={ this.onWithdrawAll }
                 	fullWidth
                 >
-                	<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.3" >{i18next.t('asset.Text.3')}</Typography>
+                	<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.4" >{i18next.t('asset.Text.4')}</Typography>
                 </Button>
   						}
   					</div>

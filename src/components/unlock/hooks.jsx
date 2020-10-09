@@ -1,5 +1,5 @@
 //i18n => {}
-import {i18n as i18next} from "i18next";
+import i18next from "i18next";
 import { useState, useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 

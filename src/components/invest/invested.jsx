@@ -1,5 +1,5 @@
-//i18n => {"invested.Text.1":"Investments","invested.Text.2":"Interest Earned","invested.Text.3":"I am earning interest on","invested.Text.4":"Asset","invested.Text.5":"APR","invested.Text.6":"Balance","invested.Text.7":"Redeem"}
-import {i18n as i18next} from "i18next";
+//i18n => {"invested.Text.1":"Investments","invested.Text.2":"Interest Earned","invested.Text.3":"I am earning interest on","invested.Text.4":"Asset","invested.Text.5":"APR","invested.Text.6":"Balance","invested.Text.7":"{ asset.name }","invested.Text.8":"Redeem","invested.Text.9":"{ asset.name }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -210,7 +210,7 @@ class Invested extends Component {
   					return (
   						<div key={asset.symbol} className={ classes.tableRowExpanded } >
   							<div className={ `${classes.tableCell} ${classes.tableCell1}` } onClick={ (e) => { this.clickRow(e, asset); } }>
-  								<Typography variant='body1' noWrap>{ asset.name }</Typography>
+  								<Typography variant='body1' noWrap id="invested.Text.7" >{i18next.t('invested.Text.7')}</Typography>
   							</div>
   							<div className={ classes.tableCell } onClick={ (e) => { this.clickRow(e, asset); } }>
   								<Typography variant='body1' align='right' noWrap>{ asset.apr }%</Typography>
@@ -240,7 +240,7 @@ class Invested extends Component {
   									disabled={ loading }
   									onClick={ this.onCollateralize }
   								>
-  									<Typography className={ classes.buttonText } variant={ 'h3'} id="invested.Text.7" >{i18next.t('invested.Text.7')}</Typography>
+  									<Typography className={ classes.buttonText } variant={ 'h3'} id="invested.Text.8" >{i18next.t('invested.Text.8')}</Typography>
   								</Button>
   							</div>
   						</div>
@@ -250,7 +250,7 @@ class Invested extends Component {
   				return (
   					<div key={asset.symbol} className={ classes.tableRow } onClick={ (e) => { this.clickRow(e, asset); } }>
   						<div className={ `${classes.tableCell} ${classes.tableCell1}` }>
-  							<Typography variant='body1' noWrap>{ asset.name }</Typography>
+  							<Typography variant='body1' noWrap id="invested.Text.9" >{i18next.t('invested.Text.9')}</Typography>
   						</div>
   						<div className={ classes.tableCell }>
   							<Typography variant='body1' align='right' noWrap>{ asset.apr }%</Typography>

@@ -1,5 +1,5 @@
-//i18n => {"vault.Text.1":"This project is in beta. Use at your own risk.","vault.Text.2":"Connect your wallet to continue","vault.Text.3":"This project is in beta. Use at your own risk.","vault.Text.4":" on ","vault.Text.5":"Not Available"}
-import {i18n as i18next} from "i18next";
+//i18n => {"vault.Text.1":"This project is in beta. Use at your own risk.","vault.Text.2":"Connect your wallet to continue","vault.Text.3":"This project is in beta. Use at your own risk.","vault.Text.4":"{ asset.name }","vault.Text.5":"{ asset.description }","vault.Text.6":" on ","vault.Text.7":"Not Available","vault.Text.8":"{ option.description }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -483,8 +483,8 @@ class Vault extends Component {
   								/>
   							</div>
   							<div>
-  								<Typography variant={ 'h3' } noWrap>{ asset.name }</Typography>
-  								<Typography variant={ 'h5' } className={ classes.grey }>{ asset.description }</Typography>
+  								<Typography variant={ 'h3' } noWrap id="vault.Text.4" >{i18next.t('vault.Text.4')}</Typography>
+  								<Typography variant={ 'h5' } className={ classes.grey } id="vault.Text.5" >{i18next.t('vault.Text.5')}</Typography>
   							</div>
   						</div>
   						{
@@ -493,7 +493,7 @@ class Vault extends Component {
                 	<Typography variant={ 'h5' } className={ classes.grey }>Yearly Growth:</Typography>
                 	<div className={ classes.flexy }>
                 		<Typography variant={ 'h3' } noWrap>{ (this._getAPY(asset)/1).toFixed(2) }% </Typography>
-                		<Typography variant={ 'h5' } className={ classes.on } id="vault.Text.4" >{i18next.t('vault.Text.4')}</Typography>
+                		<Typography variant={ 'h5' } className={ classes.on } id="vault.Text.6" >{i18next.t('vault.Text.6')}</Typography>
                 		<Typography variant={ 'h3' } noWrap>{ (asset.vaultBalance ? (Math.floor(asset.vaultBalance*asset.pricePerFullShare*10000)/10000).toFixed(2) : '0.00') } {asset.symbol}</Typography>
                 	</div>
                 </div>
@@ -511,7 +511,7 @@ class Vault extends Component {
   							['LINK'].includes(asset.id) &&
                 <div className={classes.headingEarning}>
                 	<Typography variant={ 'h5' } className={ classes.grey }>Yearly Growth:</Typography>
-                	<Typography variant={ 'h3' } noWrap id="vault.Text.5" >{i18next.t('vault.Text.5')}</Typography>
+                	<Typography variant={ 'h3' } noWrap id="vault.Text.7" >{i18next.t('vault.Text.7')}</Typography>
                 </div>
   						}
   						<div className={classes.heading}>
@@ -657,7 +657,7 @@ class Vault extends Component {
           options.map((option) => {
           	return (
           		<MenuItem key={ option.value } value={ option.value }>
-          			<Typography variant='h4'>{ option.description }</Typography>
+          			<Typography variant='h4' id="vault.Text.8" >{i18next.t('vault.Text.8')}</Typography>
           		</MenuItem>
           	);
           })

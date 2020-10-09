@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"asset.Text.1":"{ t('Asset.Claim') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -271,7 +271,7 @@ class Asset extends Component {
   				onClick={ this.onRedeem }
   				fullWidth
   			>
-  				<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('Asset.Claim') }</Typography>
+  				<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="asset.Text.1" >{i18next.t('asset.Text.1')}</Typography>
   			</Button>
   		</div>
   	</div>);

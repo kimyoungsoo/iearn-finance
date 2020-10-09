@@ -1,5 +1,5 @@
-//i18n => {"header.Text.1":"yearn.finance","header.Text.2":"\n                Connect your wallet\n              "}
-import {i18n as i18next} from "i18next";
+//i18n => {"header.Text.1":"yearn.finance","header.Text.2":"\n                Connect your wallet\n              ","header.Text.3":"{ screen }"}
+import i18next from "i18next";
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -230,7 +230,7 @@ class Header extends Component {
 
   	return (
   		<div className={ (window.location.pathname==='/'+screen)?classes.linkActive:classes.link } onClick={ () => { this.nav(screen); } }>
-  			<Typography variant={'h4'} className={ `title` }>{ screen }</Typography>
+  			<Typography variant={'h4'} className={ `title` } id="header.Text.3" >{i18next.t('header.Text.3')}</Typography>
   		</div>
   	);
   }

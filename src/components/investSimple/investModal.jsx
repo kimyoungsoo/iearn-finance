@@ -1,5 +1,5 @@
 //i18n => {"investModal.Text.1":"Cancel","investModal.Text.2":"Submit"}
-import {i18n as i18next} from "i18next";
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';

@@ -1,5 +1,5 @@
 //i18n => {"footer.Text.1":"yearn.finance","footer.Text.2":"Built with","footer.Text.3":"Products","footer.Text.4":"yearn.finance","footer.Text.5":"ygov.finance","footer.Text.6":"yinsure.finance","footer.Text.7":"yborrow.finance","footer.Text.8":"docs.yearn.finance","footer.Text.9":"Community","footer.Text.10":"ycosystem.info","footer.Text.11":"learnyearn.finance","footer.Text.12":"stats.finance","footer.Text.13":"yieldfarming.info","footer.Text.14":"yearn.snapshot.page","footer.Text.15":"vaults.finance","footer.Text.16":"Socials","footer.Text.17":"Twitter","footer.Text.18":"Medium","footer.Text.19":"Discord","footer.Text.20":"Telegram","footer.Text.21":"Github"}
-import {i18n as i18next} from "i18next";
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';

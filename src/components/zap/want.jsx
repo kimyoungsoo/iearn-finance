@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"want.Text.1":"{ t(\"Zap.IWillReceive\") }","want.Text.2":"{ option.symbol }","want.Text.3":"{ 'TUSD' }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -132,7 +132,7 @@ class Want extends Component {
 			<div className={ classes.root }>
 				<div className={ classes.inputCard }>
 
-					<Typography variant='h3' className={ classes.inputCardHeading }>{ t("Zap.IWillReceive") }</Typography>
+					<Typography variant='h3' className={ classes.inputCardHeading } id="want.Text.1" >{i18next.t('want.Text.1')}</Typography>
 					{ (sendAsset && sendAsset.symbol === 'ETH') && this.renderAsset('DAI', amount) }
 					{ (!sendAsset || sendAsset.symbol !== 'ETH') && this.renderAssetSelect('asset', asset, assetOptions, null, sendAsset) }
 				</div>
@@ -246,7 +246,7 @@ class Want extends Component {
   					/>
   				</div>
   				<div className={ classes.assetSelectIconName }>
-  					<Typography variant='h4'>{ option.symbol }</Typography>
+  					<Typography variant='h4' id="want.Text.2" >{i18next.t('want.Text.2')}</Typography>
   				</div>
   				{
   					(sendAsset && sendAsset.id === 'crvV3' && option.id === 'crvV4') &&(
@@ -262,7 +262,7 @@ class Want extends Component {
   								/>
   							</div>
   							<div className={ classes.assetSelectIconName }>
-  								<Typography variant='h4'>{ 'TUSD' }</Typography>
+  								<Typography variant='h4' id="want.Text.3" >{i18next.t('want.Text.3')}</Typography>
   							</div>
   						</React.Fragment>)
   				}

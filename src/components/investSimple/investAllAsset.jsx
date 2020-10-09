@@ -1,5 +1,5 @@
-//i18n => {}
-import {i18n as i18next} from "i18next";
+//i18n => {"investAllAsset.Text.1":"{ asset.name }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -138,7 +138,7 @@ class Asset extends Component {
 						/>
 					</div>
 					<div>
-						<Typography variant={ 'h3' }>{ asset.name }</Typography>
+						<Typography variant={ 'h3' } id="investAllAsset.Text.1" >{i18next.t('investAllAsset.Text.1')}</Typography>
 						<Typography variant={ 'h5' }>{ asset.version === 1?asset.description+' - v'+asset.version+'':asset.description }</Typography>
 					</div>
 				</div>

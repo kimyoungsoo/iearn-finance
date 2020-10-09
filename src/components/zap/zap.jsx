@@ -1,5 +1,5 @@
-//i18n => {"zap.Text.1":"This project is in beta. Use at your own risk.","zap.Text.2":"Connect your wallet to continue","zap.Text.3":"This project is in beta. Use at your own risk."}
-import {i18n as i18next} from "i18next";
+//i18n => {"zap.Text.1":"This project is in beta. Use at your own risk.","zap.Text.2":"Connect your wallet to continue","zap.Text.3":"This project is in beta. Use at your own risk.","zap.Text.4":"{ t('Zap.Zap') }","zap.Text.5":"{ t('Zap.Swap') }","zap.Text.6":"{ t('Zap.Trade') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -382,7 +382,7 @@ class Zap extends Component {
   						onClick={ this.onZap }
   						fullWidth
   					>
-  						<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('Zap.Zap') }</Typography>
+  						<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="zap.Text.4" >{i18next.t('zap.Text.4')}</Typography>
   					</Button> }
   					{ (sendAsset && receiveAsset && ['crvV3', 'crvV4'].includes(receiveAsset.id) && ['crvV1', 'crvV2', 'crvV3'].includes(sendAsset.id)) && <Button
   						className={ classes.actionButton }
@@ -392,7 +392,7 @@ class Zap extends Component {
   						onClick={ this.onSwap }
   						fullWidth
   					>
-  						<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('Zap.Swap') }</Typography>
+  						<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="zap.Text.5" >{i18next.t('zap.Text.5')}</Typography>
   					</Button> }
   					{ (sendAsset && sendAsset.symbol === 'ETH') && <Button
   						className={ classes.actionButton }
@@ -402,7 +402,7 @@ class Zap extends Component {
   						onClick={ this.onTrade }
   						fullWidth
   					>
-  						<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary'>{ t('Zap.Trade') }</Typography>
+  						<Typography className={ classes.buttonText } variant={ 'h5'} color='secondary' id="zap.Text.6" >{i18next.t('zap.Text.6')}</Typography>
   					</Button> }
   				</Card>
   				<div className={ classes.introCenter }>

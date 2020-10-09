@@ -1,5 +1,5 @@
-//i18n => {"insure.Text.1":"This project is in beta. Use at your own risk.","insure.Text.2":"Wallet"}
-import {i18n as i18next} from "i18next";
+//i18n => {"insure.Text.1":"This project is in beta. Use at your own risk.","insure.Text.2":"Wallet","insure.Text.3":"{ address }","insure.Text.4":"{ t('Zap.Intro') }","insure.Text.5":"{ t('Insure.Intro') }","insure.Text.6":"{ t('InvestSimple.Connect') }","insure.Text.7":"{ asset.name }","insure.Text.8":"{ asset.description }","insure.Text.9":"{ t('Insure.Balance') }","insure.Text.10":"{ t('Insure.Insured') }"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -338,19 +338,19 @@ class Insure extends Component {
             	<Typography variant='h3' className={ classes.introText }></Typography>
             	<Card className={ classes.addressContainer } onClick={this.overlayClicked}>
             		<Typography variant={ 'h3'} className={ classes.walletTitle } noWrap id="insure.Text.2" >{i18next.t('insure.Text.2')}</Typography>
-            		<Typography variant={ 'h4'} className={ classes.walletAddress } noWrap>{ address }</Typography>
+            		<Typography variant={ 'h4'} className={ classes.walletAddress } noWrap id="insure.Text.3" >{i18next.t('insure.Text.3')}</Typography>
             		<div style={{ background: '#DC6BE5', opacity: '1', borderRadius: '10px', width: '10px', height: '10px', marginRight: '3px', marginTop:'3px', marginLeft:'6px' }}></div>
             	</Card>
             </div>
   				}
   				{ (account && account.address) &&
             <div className={ classes.actualIntro }>
-            	<Typography variant='h3'>{ t('Zap.Intro') }</Typography>
+            	<Typography variant='h3' id="insure.Text.4" >{i18next.t('insure.Text.4')}</Typography>
             </div>
   				}
   				{ (!account || !account.address) &&
             <div className={ classes.introCenter }>
-            	<Typography variant='h3'>{ t('Insure.Intro') }</Typography>
+            	<Typography variant='h3' id="insure.Text.5" >{i18next.t('insure.Text.5')}</Typography>
             </div>
   				}
 
@@ -363,7 +363,7 @@ class Insure extends Component {
             		disabled={ loading }
             		onClick={ this.overlayClicked }
             	>
-            		<Typography className={ classes.buttonText } variant={ 'h5'}>{ t('InvestSimple.Connect') }</Typography>
+            		<Typography className={ classes.buttonText } variant={ 'h5'} id="insure.Text.6" >{i18next.t('insure.Text.6')}</Typography>
             	</Button>
             </div>
   				}
@@ -406,17 +406,17 @@ class Insure extends Component {
   								/>
   							</div>
   							<div>
-  								<Typography variant={ 'h3' }>{ asset.name }</Typography>
-  								<Typography variant={ 'h5' } className={ classes.grey }>{ asset.description }</Typography>
+  								<Typography variant={ 'h3' } id="insure.Text.7" >{i18next.t('insure.Text.7')}</Typography>
+  								<Typography variant={ 'h5' } className={ classes.grey } id="insure.Text.8" >{i18next.t('insure.Text.8')}</Typography>
   							</div>
   						</div>
   						<div className={classes.heading}>
   							<Typography variant={ 'h3' }>{ (asset.balance ? (asset.balance).toFixed(4) : '0.0000')+' '+( asset.tokenSymbol ? asset.tokenSymbol : asset.symbol ) }</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('Insure.Balance') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="insure.Text.9" >{i18next.t('insure.Text.9')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography variant={ 'h3' }>{ (asset.balance > 0 ? (asset.insuredBalance  * 100 / (asset.insuredBalance + asset.balance)).toFixed(4) : '0.0000')+' %'}</Typography>
-  							<Typography variant={ 'h5' } className={ classes.grey }>{ t('Insure.Insured') }</Typography>
+  							<Typography variant={ 'h5' } className={ classes.grey } id="insure.Text.10" >{i18next.t('insure.Text.10')}</Typography>
   						</div>
   					</div>
   				</ExpansionPanelSummary>

@@ -1,5 +1,5 @@
-//i18n => {"manage.Text.1":"Management. You should probably not be here.","manage.Text.2":"Management. Simplified.","manage.Text.3":"Connect wallet","manage.Text.4":"Connect Wallet"}
-import {i18n as i18next} from "i18next";
+//i18n => {"manage.Text.1":"Management. You should probably not be here.","manage.Text.2":"Management. Simplified.","manage.Text.3":"Connect wallet","manage.Text.4":"Connect Wallet","manage.Text.5":"{ asset.name }","manage.Text.6":"{ asset.description }","manage.Text.7":"{'Interest Rate'}","manage.Text.8":"{'Annual Yield'}","manage.Text.9":"{'Pool Balance'}"}
+import i18next from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -412,20 +412,20 @@ class Manage extends Component {
   							/>
   						</div>
   						<div className={classes.heading}>
-  							<Typography className={classes.heading} variant={ 'h3' }>{ asset.name }</Typography>
-  							<Typography className={classes.heading} variant={ 'h5' }>{ asset.description }</Typography>
+  							<Typography className={classes.heading} variant={ 'h3' } id="manage.Text.5" >{i18next.t('manage.Text.5')}</Typography>
+  							<Typography className={classes.heading} variant={ 'h5' } id="manage.Text.6" >{i18next.t('manage.Text.6')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography className={classes.heading} variant={ 'h3' }>{ (asset.maxApr*100).toFixed(4) + ' %' }</Typography>
-  							<Typography className={classes.heading} variant={ 'h5' }>{'Interest Rate'}</Typography>
+  							<Typography className={classes.heading} variant={ 'h5' } id="manage.Text.7" >{i18next.t('manage.Text.7')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography className={classes.heading} variant={ 'h3' }>{ (asset.apy*100).toFixed(4) + ' %' }</Typography>
-  							<Typography className={classes.heading} variant={ 'h5' }>{'Annual Yield'}</Typography>
+  							<Typography className={classes.heading} variant={ 'h5' } id="manage.Text.8" >{i18next.t('manage.Text.8')}</Typography>
   						</div>
   						<div className={classes.heading}>
   							<Typography className={classes.heading} variant={ 'h3' }>{formatter.format(asset.poolValue)+' '+( asset.tokenSymbol ? asset.tokenSymbol : asset.symbol )}</Typography>
-  							<Typography className={classes.heading} variant={ 'h5' }>{'Pool Balance'}</Typography>
+  							<Typography className={classes.heading} variant={ 'h5' } id="manage.Text.9" >{i18next.t('manage.Text.9')}</Typography>
   						</div>
   					</div>
   				</AccordionSummary>
