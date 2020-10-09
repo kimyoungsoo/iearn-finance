@@ -1,3 +1,5 @@
+//i18n => {}
+import {i18n as i18next} from "i18next";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
@@ -6,37 +8,37 @@ import {
 
 
 const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1
-  },
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		flex: 1
+	},
 });
 
 class ConversionRatios extends Component {
-  constructor() {
-    super()
+	constructor() {
+		super();
 
-    this.state = {
+		this.state = {
 
-    }
-  }
+		};
+	}
 
-  render() {
-    const { classes } = this.props;
-    const {
-      asset,
-      assetOptions,
-      assetError,
-      amount,
-      amountError
-    } = this.state;
+	render() {
+		const { classes } = this.props;
+		const {
+			asset,
+			assetOptions,
+			assetError,
+			amount,
+			amountError
+		} = this.state;
 
-    return (
-      <div className={ classes.root }>
-      </div>
-    )
-  };
+		return (
+			<div className={ classes.root }>
+			</div>
+		);
+	};
 }
 
 export default withRouter(withStyles(styles)(ConversionRatios));
